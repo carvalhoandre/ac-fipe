@@ -2,12 +2,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 :root {
-  --primary-blue: #3a7bd5;
-  --secondary-green: #34a853;
-  --soft-gray: #f5f5f5;
-  --dark-gray: #4a4a4a;
-  --white: #ffffff;
-  --highlight-yellow: #fbbc05;
+  --color-0: #fff;
+  --color-1: #eed2ccff;
+  --color-2: #e8998dff;
+  --color-3: #a1683aff;
+  --color-4: #6c9a8bff;
+  --color-5: #b2b2b2;
+  --color-6: #9c9c9c;
+  --color-7: #717171;
+  --color-8: #595959;
+  --color-9: #404040;
+  --color-10: #2e2e2e;
+  --color-11: #111111;
+  --color-12: #000000;
+
+  --color-p1: #6c9a8bff;
+  --color-p2: #e8998dff;
+  --color-p3: #a1683aff;
+  --color-p4: #eed2ccff;
+  --color-p5: #fbf7f4ff;
+}
+
+.color-0 {
+  color: var(--color-0);
+}
+.color-1 {
+  color: var(--color-1);
+}
+.color-2 {
+  color: var(--color-2);
+}
+.color-3 {
+  color: var(--color-3);
+}
+.color-4 {
+  color: var(--color-4);
+}
+.color-5 {
+  color: var(--color-5);
+}
+.color-6 {
+  color: var(--color-6);
+}
+.color-7 {
+  color: var(--color-7);
+}
+.color-8 {
+  color: var(--color-8);
+}
+.color-9 {
+  color: var(--color-9);
+}
+.color-10 {
+  color: var(--color-10);
+}
+.color-11 {
+  color: var(--color-11);
+}
+.color-12 {
+  color: var(--color-12);
+}
+
+/* Primary */
+.color-p1 {
+  color: var(--color-p1);
+}
+.color-p2 {
+  color: var(--color-p2);
+}
+.color-p3 {
+  color: var(--color-p3);
+}
+.color-p4 {
+  color: var(--color-p4);
+}
+.color-p5 {
+  color: var(--color-p5);
 }
 
 /* base */
@@ -47,4 +117,176 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--soft-gray);
   color: var(--dark-gray);
+}
+
+.button {
+  display: inline-block;
+  padding: 16px 32px;
+  background: linear-gradient(#ffbf00, #f2a50c);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  color: var(--color-p5);
+  line-height: 1.33;
+  font: 900 1.125rem/1.35 "Poppins", Arial, Helvetica, sans-serif;
+  max-width: max-content;
+  border: none;
+}
+
+.button:hover {
+  background: linear-gradient(#ffb60d, #e59317);
+  cursor: pointer;
+}
+
+.button.second {
+  background: var(--color-10);
+  color: var(--color-2);
+}
+
+.button.send {
+  display: flex;
+  align-items: center;
+}
+
+.button.send:hover::after {
+  transform: translateX(4px);
+}
+
+.button.second:hover {
+  background: var(--color-9);
+}
+
+.link {
+  display: inline-block;
+  color: var(--color-p1);
+  font: 500 1.5rem/1.5 "Poppins", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+.link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: currentColor;
+}
+
+.link:hover {
+  color: var(--color-0);
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+
+.title-bg {
+  background-color: var(--color-11);
+  padding: 60px 0px;
+}
+
+.title p {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 600px) {
+  .button {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .title-bg {
+    padding: 40px 0px;
+  }
+
+  .title p {
+    font-size: 1rem;
+    text-transform: lowercase;
+    font-weight: 400;
+  }
+}
+
+.ty-1-xs {
+  font: 400 0.75rem/1.35 "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.ty-2-xs {
+  font: 400 0.875rem/1.35 "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.ty-1-s {
+  font: 400 1rem/1.5 "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.ty-2-s {
+  font: 400 1rem/1.5 "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.ty-1-m,
+.ty-1-m-b {
+  font: 500 1.125rem/1.35 "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.ty-1-m-b {
+  font-weight: 600;
+}
+
+.ty-2-m,
+.ty-2-mb {
+  font: 500 1.125rem/1.35 "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.ty-2-mb {
+  font-weight: 600;
+}
+
+.ty-1-l {
+  font: 400 1.5rem/1.35 "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.ty-2-l,
+.ty-2-l-b {
+  font: 400 1.5rem/1.5 "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.ty-2-l-b {
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+.ty-1-xl {
+  font: 600 2rem/1.25 "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.ty-2-xl {
+  font: 600 2rem/1.25 "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.ty-1-xxl {
+  font: 600 4rem/1.125 "Poppins", Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 1200px) {
+  .ty-1-xxl {
+    font-size: 3rem;
+  }
+
+  .ty-2-l,
+  .ty-2-l-b {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .ty-1-xxl {
+    font-size: 2rem;
+  }
+
+  .ty-1-xl,
+  .ty-2-xl {
+    font-size: 1.5rem;
+  }
 }
