@@ -1,0 +1,106 @@
+<section id="budget">
+  <div class="title-bg">
+    <div class="title container">
+      <p class="ty-2-l-b color-5">cotações do seu veículo na Fipe</p>
+      <h1 class="ty-1-l-xxl color-0">
+        valores <span class="color-p1">.</span>
+      </h1>
+    </div>
+  </div>
+
+  <div [ngClass]="vehicleInfo ? 'budget-form' : 'budget-container form'">
+    <form class="budget-product" (ngSubmit)="fetchVehicleInfo()">
+      <h2 class="ty-1-xs color-p2">Qual o tipo do seu veículo?</h2>
+      <select
+        [(ngModel)]="vehicleType"
+        (change)="onVehicleTypeChange($event)"
+        class="col-2"
+        name="vehicleType"
+      >
+        <option [value]="null" disabled selected>Selecione o tipo</option>
+        <option value="carros">Carro</option>
+        <option value="motos">Moto</option>
+        <option value="caminhoes">Caminhão</option>
+      </select>
+
+      <div class="budget-select" *ngIf="brands?.length">
+        <h2 class="ty-1-xs color-p2">Escolha a marca</h2>
+        <select
+          [(ngModel)]="codeBrand"
+          (change)="onBrandChange($event)"
+          class="col-2"
+          name="codeBrand"
+        >
+          <option [value]="null" disabled selected>Selecione a marca</option>
+          <option *ngFor="let brand of brands" [value]="brand.codigo">
+            {{ brand.nome }}
+          </option>
+        </select>
+      </div>
+
+      <div class="budget-select" *ngIf="models?.length">
+        <h2 class="ty-1-xs color-p2">Escolha o modelo</h2>
+        <select
+          [(ngModel)]="codeModel"
+          (change)="onModelChange($event)"
+          class="col-2"
+          name="codeModel"
+        >
+          <option [value]="null" disabled selected>Selecione o modelo</option>
+          <option *ngFor="let model of models" [value]="model.codigo">
+            {{ model.nome }}
+          </option>
+        </select>
+      </div>
+
+      <div class="budget-select" *ngIf="years?.length">
+        <h2 class="ty-1-xs color-p2">Escolha o ano e tipo de combustível</h2>
+        <select
+          [(ngModel)]="codeYear"
+          (change)="onYearChange($event)"
+          class="col-2"
+          name="codeYear"
+        >
+          <option [value]="null" disabled selected>Selecione o ano</option>
+          <option *ngFor="let year of years" [value]="year.codigo">
+            {{ year.nome }}
+          </option>
+        </select>
+      </div>
+    </form>
+
+    <div class="budget-data form" *ngIf="vehicleInfo">
+      <h2 class="ty-1-xs color-9 col-2">Dados do veículo:</h2>
+      <div>
+        <h1>Nome</h1>
+        <p>{{ vehicleInfo.Modelo }}</p>
+      </div>
+      <div>
+        <h1>Ano</h1>
+        <p>{{ vehicleInfo.AnoModelo }}</p>
+      </div>
+      <div>
+        <h1>Fabricante</h1>
+        <p>{{ vehicleInfo.Marca }}</p>
+      </div>
+      <div>
+        <h1>Valor</h1>
+        <p>{{ vehicleInfo.Valor }}</p>
+      </div>
+      <div>
+        <h1>Combustível</h1>
+        <p>
+          {{ vehicleInfo.Combustivel }} - {{ vehicleInfo.SiglaCombustivel }}
+        </p>
+      </div>
+      <div>
+        <h1>Tipo</h1>
+        <p>{{ vehicleInfo.TipoVeiculo }}</p>
+      </div>
+      <div>
+        <h1>Mês de referência</h1>
+        <p>{{ vehicleInfo.MesReferencia }}</p>
+      </div>
+    </div>
+  </div>
+</section>

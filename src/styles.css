@@ -4,7 +4,7 @@
 :root {
   --color-0: #fff;
   --color-1: #eed2ccff;
-  --color-2: #e8998dff;
+  --color-2: #263238;
   --color-3: #a1683aff;
   --color-4: #6c9a8bff;
   --color-5: #b2b2b2;
@@ -17,8 +17,8 @@
   --color-12: #000000;
 
   --color-p1: #6c9a8bff;
-  --color-p2: #e8998dff;
-  --color-p3: #a1683aff;
+  --color-p2: #263238;
+  --color-p3: #f3de8a;
   --color-p4: #eed2ccff;
   --color-p5: #fbf7f4ff;
 }
@@ -183,7 +183,7 @@ body {
 }
 
 .title-bg {
-  background-color: var(--color-11);
+  background-color: var(--color-p2);
   padding: 60px 0px;
 }
 
@@ -209,7 +209,7 @@ body {
 }
 
 .ty-1-xs {
-  font: 400 0.75rem/1.35 "Poppins", Arial, Helvetica, sans-serif;
+  font: 400 0.95rem/1 "Poppins", Arial, Helvetica, sans-serif;
 }
 
 .ty-2-xs {
@@ -288,5 +288,49 @@ body {
   .ty-1-xl,
   .ty-2-xl {
     font-size: 1.5rem;
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form label {
+  display: block;
+  font: 400 1rem/1.5 "Poppins", sans-serif;
+  margin-bottom: 4px;
+}
+
+.form .col-2 {
+  grid-column: span 2;
+}
+
+input,
+select {
+  font: 400 1rem/1.5 "Roboto", sans-serif;
+  background-color: var(--color-0);
+  border: 1px solid var(--color-2);
+  padding: 12px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-p1);
+  background: var(--color-0);
+  box-shadow: 0 0 0 2px #fea;
+}
+
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+  .form .col-2 {
+    grid-column: 1;
   }
 }
